@@ -129,8 +129,11 @@ task.spawn(function()
 	for i = 1, 100 do
 		loadBar:TweenSize(UDim2.new(i / 100, 0, 1, 0), "Out", "Sine", 1.4, true)
 		percentText.Text = i .. "%"
-		task.wait(1.5)
+		task.wait(2)
 	end
+
+	task.wait(1) -- Optional short pause after full load
+	gui:Destroy()
 end)
 
 task.spawn(function()
